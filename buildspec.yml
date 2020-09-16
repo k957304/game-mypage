@@ -93,7 +93,7 @@ phases:
                   - name: DB_NAME
                     valueFrom:
                      configMapKeyRef:
-                       name: rds-config
+                       name: admin07-config
                        key: DB_NAME
                   name: $_PROJECT_NAME
                   image: $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$_PROJECT_NAME:$CODEBUILD_RESOLVED_SOURCE_VERSION
