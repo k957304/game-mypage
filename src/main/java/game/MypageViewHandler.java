@@ -33,16 +33,15 @@ public class MypageViewHandler {
             e.printStackTrace();
         }
     }
-    /*
+
     @StreamListener(KafkaProcessor.INPUT)
-    public void whenAllocated_then_CREATE_2 (@Payload Allocated allocated) {
+    public void whenUsed_then_CREATE_2 (@Payload Used used) {
         try {
-            if (allocated.isMe()) {
+            if (used.isMe()) {
                 // view 객체 생성
                 Mypage mypage = new Mypage();
                 // view 객체에 이벤트의 Value 를 set 함
-                mypage.setRewardId(allocated.getId());
-                mypage.setRewardStatus(allocated.getStatus());
+                mypage.setId(used.getId());
                 // view 레파지 토리에 save
                 mypageRepository.save(mypage);
             }
@@ -50,6 +49,8 @@ public class MypageViewHandler {
             e.printStackTrace();
         }
     }
+
+    /*
     @StreamListener(KafkaProcessor.INPUT)
     public void whenIssued_then_CREATE_3 (@Payload Issued issued) {
         try {
